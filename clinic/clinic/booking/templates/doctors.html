@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<title>Doctors</title>
+{% endblock %}
+
+{% block body %}
+  
+
+    <div class="bg  text-dark pt-5 pb-5">
+        <div class="text-center  pt-5 pb-5">
+            <h1 class="display-1 cGreen me-2 ms-2">Doctors</h1>
+            
+            {% for doctor in doctors %}
+            <article class="media content-section">
+                <div class="media-body border p-3"> <!-- Додано клас border для рамки та p-3 для відступів -->
+        
+                    <h2 class="article-title">{{ doctor.name }} {{ doctor.surname }}</h2>
+                    <p class="article-content w-100">Age = {{ doctor.age }} Specialisation ={{ doctor.specialisation }}</p>
+                    <p class="article-content ">Doctor ID = {{ doctor.doctor_id }}</p>
+
+                    <p class="article-content">Rating {{ doctor.rating }}</p>
+        
+                </div>
+            </article>
+        {% endfor %}
+            
+        </div>
+    </div>
+
+
+
+{% endblock %}

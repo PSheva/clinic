@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block head %}
+<title>My Clinic Posts</title>
+{% endblock %}
+
+{% block body %}
+
+  <!--Hero 1 Start-->
+
+    <div class="bg text-dark pt-5 pb-5">
+        <div class="text-center pt-5 pb-5">
+            <h1 class="display-1 cGreen me-2 ms-2">News Info</h1>
+            
+            {% for post in posts %}
+                <article class="media content-section border border-3 mb-4">
+                    <div class="media-body p-3">
+
+                        <h2 class="card-title"><a class="article-title">{{ post.title }}</a></h2>
+                        <p class="card-text article-content">{{ post.content }}</p>
+                        <p class="card-text article-content">By Admin {{ post.date_posted }}</p>
+
+                    </div>
+                </article>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+  <!--Hero 1 End-->
+
+{% endblock %}
